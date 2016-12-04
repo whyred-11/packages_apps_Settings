@@ -130,4 +130,12 @@
     <string name="notification_battery_charge_level_seek_bar">Battery Level</string>
     <string name="notification_battery_charge_level_ringtone">Ringtone</string>
     <string name="notification_battery_charge_level_silent">Silent</string>
+
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_data">Cellular data</string>
+    <string name="data_usage_app_restrict_data_summary">Enable usage of cellular data</string>
+    <string name="data_usage_app_restrict_vpn">VPN data</string>
+    <string name="data_usage_app_restrict_vpn_summary">Enable usage of VPN data</string>
+    <string name="data_usage_app_restrict_wifi">Wi-Fi data</string>
+    <string name="data_usage_app_restrict_wifi_summary">Enable usage of Wi-Fi data</string>
 </resources>
