@@ -178,6 +178,7 @@ public class Settings extends SettingsActivity {
 
     // ion ionizer
     public static class IonIonizerActivity extends SettingsActivity {}
+    public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
 
     // Ambient play
     public static class AmbientPlayHistoryActivity extends SettingsActivity { /* empty */ }
