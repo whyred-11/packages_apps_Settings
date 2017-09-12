@@ -3410,6 +3410,8 @@
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/ion_ionizer_summary"/>
         </activity>
+        <!-- Hide Apps from Recents (HAFR) -->
+        <activity android:name="com.ion.ionizer.hideappfromrecents.HAFRAppListActivity" />
 
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
