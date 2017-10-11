@@ -158,4 +158,9 @@
     <string name="privacy_chip_visibility_summary">Show icons in QS when important permissions are being used</string>
     <string name="privacy_chip_statusbar_visibility">Show in statusbar</string>
     <string name="privacy_chip_statusbar_visibility_summary">Show privacy icon in statusbar when important permissions are being used</string>
+
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
+    <string name="increasing_ring_min_volume_title">Start volume</string>
+    <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 </resources>
