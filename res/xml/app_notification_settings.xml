@@ -16,6 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res-auto"
+        xmlns:ionionizer="http://schemas.android.com/apk/res/com.android.settings"
         android:key="app_notifications">
 
     <com.android.settingslib.widget.LayoutPreference
@@ -48,6 +49,37 @@
         android:title="@string/app_notification_override_dnd_title"
         android:summary="@string/app_notification_override_dnd_summary"
         settings:useAdditionalSummary="true"/>
+
+    <!-- Lights -->
+    <com.android.settingslib.RestrictedSwitchPreference
+        android:key="lights"
+        android:title="@string/notification_show_lights_title"
+        settings:useAdditionalSummary="true"/>
+
+    <!-- Custom led color -->
+    <com.ion.ionizer.colorpicker.ColorPickerPreference
+        android:key="custom_light"
+        android:dependency="lights"
+        android:title="@string/custom_light_title"
+        ionionizer:defaultColorValue="0xFFFFFFFF"/>
+
+    <com.ion.ionizer.preferences.CustomSeekBarPreference
+        android:key="custom_light_on_time"
+        android:dependency="lights"
+        android:title="@string/custom_light_on_time_title"
+        settings:min="0"
+        android:max="10000"
+        settings:interval="100"
+        settings:units="ms" />
+
+    <com.ion.ionizer.preferences.CustomSeekBarPreference
+        android:key="custom_light_off_time"
+        android:dependency="lights"
+        android:title="@string/custom_light_off_time_title"
+        settings:min="0"
+        android:max="10000"
+        settings:interval="100"
+        settings:units="ms" />
 
     <PreferenceCategory
         android:key="app_advanced"
