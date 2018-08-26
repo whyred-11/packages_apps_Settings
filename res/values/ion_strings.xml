@@ -326,4 +326,8 @@
     <string name="home_handle_sizer_title">Length used for the gestural navigation bar handle.</string>
     <string name="home_handle_low_label">Hidden</string>
     <string name="home_handle_high_label">Long</string>
+
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Sensor block per-package</string>
+    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
 </resources>
