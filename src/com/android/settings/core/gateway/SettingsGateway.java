@@ -139,6 +139,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.android.settings.custom.ambient.history.AmbientPlayHistory;
 import com.ion.ionizer.IonIonizer;
+import com.ion.ionizer.fragments.HeadsUpSettings;
 
 public class SettingsGateway {
 
@@ -267,6 +268,7 @@ public class SettingsGateway {
             PreviouslyConnectedDeviceDashboardFragment.class.getName(),
             AmbientPlayHistory.class.getName(),
             IonIonizer.class.getName(),
+            HeadsUpSettings.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
