@@ -147,6 +147,7 @@ import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
+import com.ion.ionizer.fragments.HeadsUpSettings;
 import com.ion.ionizer.IonIonizer;
 
 public class SettingsGateway {
@@ -286,6 +287,7 @@ public class SettingsGateway {
             MobileNetworkListFragment.class.getName(),
             GlobalActionsPanelSettings.class.getName(),
             IonIonizer.class.getName(),
+            HeadsUpSettings.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {

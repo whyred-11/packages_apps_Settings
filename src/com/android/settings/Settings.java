@@ -179,5 +179,6 @@ public class Settings extends SettingsActivity {
 
     // ion ionizer
     public static class IonIonizerActivity extends SettingsActivity {}
+    public static class HeadsUpSettingsActivity extends SettingsActivity { /* empty */ }
 
 }
