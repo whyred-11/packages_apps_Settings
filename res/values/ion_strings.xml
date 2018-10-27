@@ -373,4 +373,10 @@
     <string name="qcom_battery_version">Qcom Battery Version</string>
     <string name="sys_temp_level">System Temperature Level</string>
     <string name="voltage_max">Maximum Voltage</string>
+
+    <!-- Selinux -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
 </resources>
