@@ -148,4 +148,8 @@
     <!-- Lockscreen rotation -->
     <string name="lockscreen_rotation_title">Auto-rotate lockscreen</string>
     <string name="lockscreen_rotation_summary">Allow rotation on the lockscreen</string>
+
+    <!-- Media gestures -->
+    <string name="prevent_ringing_option_mute_no_media">Mute, no media</string>
+    <string name="prevent_ringing_option_mute_no_media_summary">On (mute, no media)</string>
 </resources>
