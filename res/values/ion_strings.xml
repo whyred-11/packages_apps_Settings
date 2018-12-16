@@ -20,6 +20,15 @@
     <string name="ion_ionizer_title">ionizer</string>
     <string name="ion_ionizer_summary">ionize Everything...</string>
 
+    <!-- Ion-OS info -->
+    <string name="ion_title">ion-OS</string>
+    <string name="ion_info">ionizer version</string>
+    <string name="ion_maintainer">Maintainer</string>
+    <string name="ion_date">Build date</string>
+    <string name="ion_type">Build type</string>
+    <string name="ion_device">Device</string>
+    <string name="ion_version">Version</string>
+
     <!-- Manage applications, package string displayed in app snippet -->
     <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
 
