@@ -328,4 +328,13 @@
     <string name="color_Vermilion_700">Red</string>
     <string name="color_Teal_700">Teal</string>
     <string name="color_Yellow_700">Yellow</string>
+
+    <!-- Ion-OS info -->
+    <string name="ion_title">ion-OS</string>
+    <string name="ion_info">ionizer version</string>
+    <string name="ion_maintainer">Maintainer</string>
+    <string name="ion_date">Build date</string>
+    <string name="ion_type">Build type</string>
+    <string name="ion_device">Device</string>
+    <string name="ion_version">Version</string>
 </resources>
