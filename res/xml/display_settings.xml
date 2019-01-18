@@ -100,11 +100,12 @@
         android:title="@string/screensaver_settings_title"
         android:fragment="com.android.settings.dream.DreamSettings" />
 
+    <!-- Hide Ambient Display and execute from ionizer
     <com.android.settingslib.RestrictedPreference
         android:key="ambient_display"
         android:title="@string/ambient_display_screen_title"
         android:fragment="com.android.settings.display.AmbientDisplaySettings"
-        settings:userRestriction="no_ambient_display" />
+        settings:userRestriction="no_ambient_display" /> -->
 
     <!-- Hide night mode for now
     <ListPreference
