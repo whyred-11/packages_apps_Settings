@@ -566,11 +566,11 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> niks = super.getNonIndexableKeys(context);
 
-                    final BatteryPercentagePreferenceController controller =
-                            new BatteryPercentagePreferenceController(context);
-                    if (!controller.isAvailable()) {
-                        niks.add(controller.getPreferenceKey());
-                    }
+//                    final BatteryPercentagePreferenceController controller =
+//                            new BatteryPercentagePreferenceController(context);
+//                    if (!controller.isAvailable()) {
+//                        niks.add(controller.getPreferenceKey());
+//                    }
                     niks.add(KEY_BATTERY_SAVER_SUMMARY);
                     return niks;
                 }
