@@ -34,11 +34,19 @@
         android:title="@string/owner_info_settings_title"
         android:summary="@string/owner_info_settings_summary" />
 
+    <!-- Hide original Lockdown
     <SwitchPreference
         android:key="security_setting_lockdown_enabled"
         android:title="@string/lockdown_settings_title"
         android:summary="@string/lockdown_settings_summary"
-        settings:controller="com.android.settings.security.LockdownButtonPreferenceController"/>
+        settings:controller="com.android.settings.security.LockdownButtonPreferenceController"/> -->
+
+    <!-- Power Menu Lockdown from ionizer -->
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_lockdown"
+       android:title="@string/lockdown_settings_title"
+       android:summary="@string/lockdown_settings_summary"
+       android:defaultValue="false" />
 
     <!-- Face auto unlock -->
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
