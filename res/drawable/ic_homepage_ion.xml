@@ -16,7 +16,7 @@
     <item>
         <shape android:shape="oval">
             <solid
-                android:color="@color/homepage_ion_background" />
+                android:color="@color/ion_icon_tint_color" />
             <size
                 android:width="@dimen/dashboard_tile_image_size"
                 android:height="@dimen/dashboard_tile_image_size" />
