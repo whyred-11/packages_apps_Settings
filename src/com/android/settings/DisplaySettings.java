@@ -23,7 +23,6 @@ import android.provider.SearchIndexableResource;
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.display.AccentPickerPreferenceController;
 import com.android.settings.display.AmbientDisplayPreferenceController;
 import com.android.settings.display.BrightnessLevelPreferenceController;
 import com.android.settings.display.CameraGesturePreferenceController;
@@ -85,7 +84,6 @@ public class DisplaySettings extends DashboardFragment {
     private static List<AbstractPreferenceController> buildPreferenceControllers(
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
         controllers.add(new CameraGesturePreferenceController(context));
         controllers.add(new LiftToWakePreferenceController(context));
         controllers.add(new NightDisplayPreferenceController(context));
@@ -100,7 +98,7 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new VrDisplayPreferenceController(context));
         controllers.add(new ShowOperatorNamePreferenceController(context));
         controllers.add(new WallpaperPreferenceController(context));
-        controllers.add(new SystemUiThemePreferenceController(context, lifecycle));
+//        controllers.add(new SystemUiThemePreferenceController(context, lifecycle));
         controllers.add(new ThemePreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
         controllers.add(new ColorModePreferenceController(context));

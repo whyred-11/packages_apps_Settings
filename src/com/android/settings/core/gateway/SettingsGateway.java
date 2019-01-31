@@ -141,6 +141,7 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.android.settings.custom.ambient.history.AmbientPlayHistory;
 import com.ion.ionizer.IonIonizer;
 import com.ion.ionizer.fragments.HeadsUpSettings;
+import com.ion.ionizer.fragments.Interface;
 
 public class SettingsGateway {
 
@@ -271,6 +272,7 @@ public class SettingsGateway {
             IonIonizer.class.getName(),
             HeadsUpSettings.class.getName(),
             RunningServices.class.getName(),
+            Interface.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {

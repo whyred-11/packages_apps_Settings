@@ -135,7 +135,7 @@
         android:summary="@string/summary_placeholder" />
 
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="theme_category"
         android:title="@string/theme_category_title">
 
@@ -148,7 +148,7 @@
         <Preference
             android:key="accent_picker"
             android:title="@string/theme_accent_picker_title" />
-    </PreferenceCategory >
+    </PreferenceCategory >-->
 
     <Preference
         android:key="vr_display_pref"
