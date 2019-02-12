@@ -330,7 +330,7 @@
     <string name="color_Yellow_700">Yellow</string>
 
     <!-- Ion-OS info -->
-    <string name="ion_title">ion-OS</string>
+    <string name="ion_title">ion</string>
     <string name="ion_info">ionizer version</string>
     <string name="ion_maintainer">Maintainer</string>
     <string name="ion_date">Build date</string>
