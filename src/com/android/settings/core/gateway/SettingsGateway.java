@@ -115,6 +115,7 @@ import com.android.settings.notification.ZenModeScheduleRuleSettings;
 import com.android.settings.notification.ZenModeSettings;
 import com.android.settings.password.ChooseLockPassword;
 import com.android.settings.password.ChooseLockPattern;
+import com.android.settings.preference.DisplayRotation;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.security.CryptKeeperSettings;
@@ -140,6 +141,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.android.settings.custom.ambient.history.AmbientPlayHistory;
 import com.ion.ionizer.IonIonizer;
+import com.ion.ionizer.fragments.Display;
 import com.ion.ionizer.fragments.HeadsUpSettings;
 import com.ion.ionizer.fragments.Interface;
 
@@ -273,6 +275,8 @@ public class SettingsGateway {
             HeadsUpSettings.class.getName(),
             RunningServices.class.getName(),
             Interface.class.getName(),
+            DisplayRotation.class.getName(),
+            Display.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
