@@ -176,4 +176,7 @@
 
     <!-- Whether to disable "Uninstall Updates" menu item for System apps or not.. -->
     <bool name="config_disable_uninstall_update">false</bool>
+
+    <!-- Whether to show advanced battery info -->
+    <bool name="config_battery_info_available">false</bool>
 </resources>
