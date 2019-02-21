@@ -158,27 +158,28 @@
         android:title="@string/fcc_equipment_id"
         android:summary="@string/summary_placeholder"/>
 
-    <!-- Build number -->
-    <Preference
-        android:key="build_number"
-        android:order="43"
-        android:title="@string/build_number"
-        android:summary="@string/summary_placeholder"
-        settings:allowDividerAbove="true"/>
-
     <!-- SELinux status information -->
     <Preference
         android:key="selinux_status"
-        android:order="99"
+        android:order="43"
         android:title="@string/selinux_status"
         android:summary="@string/selinux_status_enforcing"
-        android:selectable="false"/>
+        android:selectable="false"
+        settings:allowDividerAbove="true"/>
 
     <!-- Up time -->
     <Preference
         android:key="status_up_time"
-        android:order="45"
+        android:order="44"
         android:title="@string/status_up_time"
         android:summary="@string/summary_placeholder"/>
+
+    <!-- Build number -->
+    <Preference
+        android:key="build_number"
+        android:order="45"
+        android:title="@string/build_number"
+        android:summary="@string/summary_placeholder"
+        settings:allowDividerAbove="true"/>
 
 </PreferenceScreen>

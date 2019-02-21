@@ -29,7 +29,6 @@ import com.android.settingslib.core.AbstractPreferenceController;
 public class SELinuxStatusPreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin {
 
-    private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
     private static final String KEY_SELINUX_STATUS = "selinux_status";
 
     public SELinuxStatusPreferenceController(Context context) {
@@ -38,7 +37,7 @@ public class SELinuxStatusPreferenceController extends AbstractPreferenceControl
 
     @Override
     public boolean isAvailable() {
-        return !TextUtils.isEmpty(SystemProperties.get(PROPERTY_SELINUX_STATUS));
+        return true;
     }
 
     @Override
