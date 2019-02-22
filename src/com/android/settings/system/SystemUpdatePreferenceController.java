@@ -30,9 +30,9 @@ public class SystemUpdatePreferenceController extends BasePreferenceController {
 
     private static final String KEY_SYSTEM_UPDATE_SETTINGS = "system_update_settings";
 
-    private static final String OTA_BUILD_TYPE_PROP = "org.pixelexperience.build_type";
-    private static final String DEVICE_NAME = "org.pixelexperience.device";
-    private static final String OTA_APP_PACKAGE = "org.pixelexperience.ota";
+    private static final String OTA_BUILD_TYPE_PROP = "ro.ion.build_type";
+    private static final String DEVICE_NAME = "ro.ion.device";
+    private static final String OTA_APP_PACKAGE = "com.ion.ota";
 
     private final UserManager mUm;
 
@@ -45,7 +45,7 @@ public class SystemUpdatePreferenceController extends BasePreferenceController {
     public int getAvailabilityStatus() {
         String buildtype = SystemProperties.get(OTA_BUILD_TYPE_PROP,"unofficial");
         String deviceName = SystemProperties.get(DEVICE_NAME,"");
-        if (deviceName.startsWith("phhgsi_") || !mUm.isAdminUser() || !buildtype.equalsIgnoreCase("official")){
+        if (deviceName.startsWith("phhgsi_") || !mUm.isAdminUser() || !buildtype.equalsIgnoreCase("release")){
             return UNSUPPORTED_ON_DEVICE;
         }
         try {
