@@ -78,10 +78,10 @@ public class BuildNumberPreferenceController extends BasePreferenceController im
     public CharSequence getSummary() {
         StringBuilder sb = new StringBuilder();
         sb.append(BidiFormatter.getInstance().unicodeWrap(Build.DISPLAY));
-        String pixelExperienceVersion = VersionUtils.getPixelExperienceVersion();
-        if (!pixelExperienceVersion.equals("")){
+        String ionVersion = VersionUtils.getIonVersion();
+        if (!ionVersion.equals("")){
             sb.append("\n");
-            sb.append(pixelExperienceVersion);
+            sb.append(ionVersion);
         }
         return sb.toString();
     }
