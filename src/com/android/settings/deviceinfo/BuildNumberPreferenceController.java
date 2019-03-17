@@ -88,10 +88,10 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
                 StringBuilder sb = new StringBuilder();
                 sb.append(BidiFormatter.getInstance().unicodeWrap(
                         TextUtils.isEmpty(Build.VENDOR.BUILD_NUMBER_OVERRIDE) ? Build.DISPLAY : Build.VENDOR.BUILD_NUMBER_OVERRIDE));
-                String pixelExperienceVersion = getPixelExperienceVersion();
-                if (!pixelExperienceVersion.equals("")){
+                String ionVersion = getIonVersion();
+                if (!ionVersion.equals("")){
                     sb.append("\n");
-                    sb.append(pixelExperienceVersion);
+                    sb.append(ionVersion);
                 }
                 preference.setSummary(sb.toString());
                 preference.setEnabled(true);
@@ -101,10 +101,11 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
         }
     }
 
-    private String getPixelExperienceVersion(){
-        String buildDate = SystemProperties.get("org.pixelexperience.build_date","");
-        String buildType = SystemProperties.get("org.pixelexperience.build_type","unofficial").toUpperCase();
-        return buildDate.equals("") ? "" : "PixelExperience-" + buildDate + "-" + buildType;
+    private String getIonVersion(){
+        String buildDate = SystemProperties.get("ro.ion.build_date","");
+        String buildIon = SystemProperties.get("ro.ionizer","");
+        String buildType = SystemProperties.get("ro.ion.build_type","unofficial")/*.toUpperCase()*/;
+        return buildDate.equals("") ? "" : "ion-" + buildIon + "-" + buildDate + "-" + buildType;
     }
 
     @Override
