@@ -394,4 +394,8 @@
     <string name="battery_estimate_position_qspanel">QS Panel</string>
     <string name="advanced_battery_options_title">Advanced</string>
     <string name="advanced_battery_options_summary">Advanced Battery options</string>
+
+    <!-- Battery saving mode for Location - GPS will be disabled -->
+    <string name="location_mode_battery_saving_title">Battery saving mode</string>
+    <string name="location_mode_battery_saving_summary">Use only Wi\u2011Fi, Bluetooth, or mobile networks to determine location (less accurate)</string>
 </resources>
