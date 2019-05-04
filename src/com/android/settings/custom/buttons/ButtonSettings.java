@@ -49,6 +49,8 @@ import com.android.internal.util.custom.NavbarUtils;
 import java.util.List;
 import java.util.UUID;
 
+import com.android.settings.custom.preference.CustomDialogPreference;
+
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "ButtonSettings";
@@ -469,4 +471,5 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         f.show(getFragmentManager(), "dialog_preference");
         onDialogShowing();
     }
+
 }
