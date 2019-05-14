@@ -303,10 +303,6 @@
     <string name="battery_stats_message">Battery history stats are going to be reset</string>
     <string name="ok_string">Ok</string>
 
-    <!-- Proximity wake -->
-    <string name="proximity_wake_title">Prevent accidental wake-up</string>
-    <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
-
     <!-- Titles for sim color for multi-sim -->
     <string name="color_Amber_700">Amber</string>
     <string name="color_Carbon_700">Carbon</string>
