@@ -21,7 +21,7 @@
     android:title="@string/header_category_system"
     settings:initialExpandedChildrenCount="4">
 
-    <!-- Hide Gesture and execute from ionizer
+    <!-- Hide Gesture & Button Setting and execute from ionizer
     <Preference
         android:key="gesture_settings"
         android:title="@string/gesture_preference_title"
@@ -31,12 +31,12 @@
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/> -->
 
     <!-- Button Settings -->
-    <Preference
+    <!--Preference
         android:key="button_settings"
         android:title="@string/button_pref_title"
         android:icon="@drawable/ic_button_settings"
         android:order="-70"
-        android:fragment="com.android.settings.custom.buttons.ButtonSettings" />
+        android:fragment="com.android.settings.custom.buttons.ButtonSettings" /-->
 
     <!-- Backup -->
     <Preference
