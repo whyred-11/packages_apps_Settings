@@ -385,4 +385,11 @@
 
     <!-- About phone, uptime. Deep sleep ratio since last reboot. -->
     <string name="status_deep_sleep">(Deep sleep: %1$d%2$s)</string>
+
+    <!-- Battery Estimate -->
+    <string name="show_battery_estimate_title">Battery Estimate</string>
+    <string name="show_battery_estimate_summary">Show Battery Estimate in QS Panel</string>
+    <string name="battery_estimate_position_title">Battery Estimate Position</string>
+    <string name="battery_estimate_position_qsheader">QS Header</string>
+    <string name="battery_estimate_position_qspanel">QS Panel</string>
 </resources>
