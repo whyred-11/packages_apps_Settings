@@ -17,8 +17,11 @@ package com.android.settings.battery;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -26,20 +29,49 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 
-import com.android.internal.logging.nano.MetricsProto; 
+import com.android.settings.R;
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.ion.IonUtils;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.android.settings.R;
+import java.util.Arrays;
+import java.util.HashSet;
 
-public class AdvancedBatteryOptions extends SettingsPreferenceFragment {
+public class AdvancedBatteryOptions extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
 
-    public static final String TAG = "AdvancedBatteryOptions";
+    private static final String BATTERY_ESTIMATE_POSITION_TYPE = "battery_estimate_position";
+    private ListPreference mEstimatePositionType;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.advanced_battery_options);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        // battery estimate position
+        mEstimatePositionType = (ListPreference) findPreference(BATTERY_ESTIMATE_POSITION_TYPE);
+        int type = Settings.System.getInt(resolver,
+                Settings.System.BATTERY_ESTIMATE_POSITION, 0);
+        mEstimatePositionType.setValue(String.valueOf(type));
+        mEstimatePositionType.setSummary(mEstimatePositionType.getEntry());
+        mEstimatePositionType.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mEstimatePositionType) {
+            int type = Integer.valueOf((String) objValue);
+            int index = mEstimatePositionType.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_ESTIMATE_POSITION, type);
+            mEstimatePositionType.setSummary(mEstimatePositionType.getEntries()[index]);
+            IonUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
+        return false;
     }
 
     @Override
