@@ -150,7 +150,7 @@
 
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
-    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="display_cutout_force_fullscreen_summary">Ignore notch space for selected applications</string>
 
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
