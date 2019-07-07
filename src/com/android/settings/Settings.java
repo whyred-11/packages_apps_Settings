@@ -183,6 +183,7 @@ public class Settings extends SettingsActivity {
     public static class InterfaceSettingsActivity extends SettingsActivity { /* empty */ }
     public static class RotationActivity extends SettingsActivity { /* empty */ }
     public static class ScreenActivity extends SettingsActivity { /* empty */ }
+    public static class GamingModeActivity extends SettingsActivity {}
 
     // Ambient play
     public static class AmbientPlayHistoryActivity extends SettingsActivity { /* empty */ }

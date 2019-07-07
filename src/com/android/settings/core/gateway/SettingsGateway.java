@@ -23,6 +23,7 @@ import com.android.settings.IccLockSettings;
 import com.android.settings.MasterClear;
 import com.android.settings.PrivacySettings;
 import com.android.settings.Settings;
+import com.android.settings.Settings.GamingModeActivity;
 import com.android.settings.TestingSettings;
 import com.android.settings.TetherSettings;
 import com.android.settings.TrustedCredentialsSettings;
@@ -142,6 +143,7 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.android.settings.custom.ambient.history.AmbientPlayHistory;
 import com.ion.ionizer.IonIonizer;
 import com.ion.ionizer.fragments.Display;
+import com.ion.ionizer.fragments.GamingMode;
 import com.ion.ionizer.fragments.HeadsUpSettings;
 import com.ion.ionizer.fragments.Interface;
 import com.android.settings.livedisplay.LiveDisplaySettings;
@@ -279,6 +281,7 @@ public class SettingsGateway {
             DisplayRotation.class.getName(),
             Display.class.getName(),
             LiveDisplaySettings.class.getName(),
+            GamingMode.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -318,6 +321,7 @@ public class SettingsGateway {
             Settings.EnterprisePrivacySettingsActivity.class.getName(),
             Settings.MyDeviceInfoActivity.class.getName(),
             Settings.IonIonizerActivity.class.getName(),
-            Settings.DevRunningServicesActivity.class.getName()
+            Settings.DevRunningServicesActivity.class.getName(),
+            Settings.GamingModeActivity.class.getName()
     };
 }
