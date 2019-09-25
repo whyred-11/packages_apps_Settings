@@ -3276,6 +3276,19 @@
                 android:value="com.android.settings.gestures.GlobalActionsPanelSettings" />
         </activity>
 
+        <!-- ion ionizer -->
+        <activity android:name=".Settings$IonIonizerActivity"
+            android:label="@string/ion_ionizer_title"
+            android:icon="@drawable/ic_homepage_ion"
+            android:parentActivityName="com.android.settings">
+            <intent-filter android:priority="10">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.ion.ionizer.IonIonizer" />
+        </activity>
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
