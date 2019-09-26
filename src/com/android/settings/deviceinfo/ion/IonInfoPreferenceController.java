@@ -16,13 +16,18 @@
 
 package com.android.settings.deviceinfo.ion;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Build;
 import android.os.SystemProperties;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import android.text.TextUtils;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
