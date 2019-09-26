@@ -25,6 +25,7 @@ import com.android.settings.R;
 public class IonTypeDialogController {
 
     private static final String ION_PROPERTY = "ro.ion.build_type";
+    private static final String ION_RELEASE = "ro.ion.release_type";
     private static final int ION_TYPE_VALUE_ID = R.id.ion_type_value;
     private static final int ION_TYPE_LABEL_ID = R.id.ion_type_label;
 
@@ -40,7 +41,11 @@ public class IonTypeDialogController {
 
     public void initialize() {
 
-        mDialog.setText(ION_TYPE_VALUE_ID, SystemProperties.get(ION_PROPERTY,
-                mContext.getResources().getString(R.string.device_info_default)));
+        String buildType = SystemProperties.get(ION_PROPERTY,
+                mContext.getResources().getString(R.string.device_info_default));
+        String buildRelease = SystemProperties.get(ION_RELEASE,
+                mContext.getResources().getString(R.string.device_info_default));
+
+        mDialog.setText(ION_TYPE_VALUE_ID, buildType + "-" + buildRelease);
     }
 }
