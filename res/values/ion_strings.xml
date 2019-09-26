@@ -15,7 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- ion -->
     <string name="ion_ionizer_title">ionizer</string>
     <string name="ion_ionizer_summary">ionize Everything...</string>
@@ -41,5 +40,5 @@
 
     <!-- Charging vibration -->
     <string name="charging_vibro_title">Charging vibration</string>
-
+    <string name="charging_sound_title">Charging sound</string>
 </resources>
