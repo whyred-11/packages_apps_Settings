@@ -52,7 +52,7 @@ public class SwipeToScreenshotGesturePreferenceController extends GesturePrefere
 
     private boolean isSwipeToScreenshotGestureEnabled() {
         return Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.SWIPE_TO_SCREENSHOT, 0, UserHandle.USER_CURRENT) != 0;
+                Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT) != 0;
     }
 
     @Override
