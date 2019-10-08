@@ -3303,6 +3303,18 @@
                 android:value="true" />
         </activity>
 
+        <!-- Ion System Setting -->
+        <activity android:name="Settings$IonSystemActivity"
+                android:label="@string/system_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.ion.ionizer.fragments.System" />
+        </activity>
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
