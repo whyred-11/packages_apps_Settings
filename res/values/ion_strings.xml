@@ -144,4 +144,8 @@
     <string name="platform_revision">Platform</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">Total RAM</string>
+
+    <!-- Lockscreen rotation -->
+    <string name="lockscreen_rotation_title">Auto-rotate lockscreen</string>
+    <string name="lockscreen_rotation_summary">Allow rotation on the lockscreen</string>
 </resources>
