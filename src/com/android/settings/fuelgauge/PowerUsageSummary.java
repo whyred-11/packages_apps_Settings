@@ -463,35 +463,39 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     @VisibleForTesting
     void initHeaderPreference() {
-        final BatteryMeterView batteryView = (BatteryMeterView) mBatteryLayoutPref
-                .findViewById(R.id.battery_header_icon);
-        final TextView timeText = (TextView) mBatteryLayoutPref.findViewById(R.id.battery_percent);
+        if (getContext() != null) {
+            final BatteryMeterView batteryView = (BatteryMeterView) mBatteryLayoutPref
+                    .findViewById(R.id.battery_header_icon);
+            final TextView timeText = (TextView) mBatteryLayoutPref.findViewById(R.id.battery_percent);
 
-        batteryView.setBatteryLevel(mBatteryLevel);
-        batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
-        timeText.setText(formatBatteryPercentageText(mBatteryLevel));
+            batteryView.setBatteryLevel(mBatteryLevel);
+            batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
+            timeText.setText(formatBatteryPercentageText(mBatteryLevel));
+        }
     }
 
     @VisibleForTesting
     void startBatteryHeaderAnimationIfNecessary(BatteryMeterView batteryView, TextView timeTextView,
             int prevLevel, int currentLevel) {
-        mBatteryLevel = currentLevel;
-        final int diff = Math.abs(prevLevel - currentLevel);
-        if (diff != 0) {
-            final ValueAnimator animator = ValueAnimator.ofInt(prevLevel, currentLevel);
-            animator.setDuration(BATTERY_ANIMATION_DURATION_MS_PER_LEVEL * diff);
-            animator.setInterpolator(AnimationUtils.loadInterpolator(getContext(),
-                    android.R.interpolator.fast_out_slow_in));
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    final Integer level = (Integer) animation.getAnimatedValue();
-                    batteryView.setBatteryLevel(level);
-                    batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
-                    timeTextView.setText(formatBatteryPercentageText(level));
-                }
-            });
-            animator.start();
+        if (getContext() != null) {
+            mBatteryLevel = currentLevel;
+            final int diff = Math.abs(prevLevel - currentLevel);
+            if (diff != 0) {
+                final ValueAnimator animator = ValueAnimator.ofInt(prevLevel, currentLevel);
+                animator.setDuration(BATTERY_ANIMATION_DURATION_MS_PER_LEVEL * diff);
+                animator.setInterpolator(AnimationUtils.loadInterpolator(getContext(),
+                        android.R.interpolator.fast_out_slow_in));
+                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        final Integer level = (Integer) animation.getAnimatedValue();
+                        batteryView.setBatteryLevel(level);
+                        batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
+                        timeTextView.setText(formatBatteryPercentageText(level));
+                    }
+                });
+                animator.start();
+            }
         }
     }
 
@@ -545,8 +549,12 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     }
 
     private CharSequence formatBatteryPercentageText(int batteryLevel) {
-        return TextUtils.expandTemplate(getContext().getText(R.string.battery_header_title_alternate),
-                NumberFormat.getIntegerInstance().format(batteryLevel));
+        try {
+            return TextUtils.expandTemplate(getContext().getText(R.string.battery_header_title_alternate),
+                    NumberFormat.getIntegerInstance().format(batteryLevel));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
