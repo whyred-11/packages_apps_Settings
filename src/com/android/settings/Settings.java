@@ -182,5 +182,6 @@ public class Settings extends SettingsActivity {
     public static class HeadsUpSettingsActivity extends SettingsActivity { /* empty */ }
     public static class IonSystemActivity extends SettingsActivity { /* empty */ }
     public static class RotationActivity extends SettingsActivity { /* empty */ }
+    public static class SmartPixelsActivity extends SettingsActivity { /* empty */ }
 
 }

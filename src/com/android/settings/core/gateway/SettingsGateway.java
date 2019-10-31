@@ -149,6 +149,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.ion.ionizer.fragments.HeadsUpSettings;
+import com.ion.ionizer.fragments.SmartPixels;
 import com.ion.ionizer.fragments.System;
 import com.ion.ionizer.IonIonizer;
 
@@ -292,6 +293,7 @@ public class SettingsGateway {
             HeadsUpSettings.class.getName(),
             System.class.getName(),
             DisplayRotation.class.getName(),
+            SmartPixels.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
