@@ -16,6 +16,7 @@
 package com.android.settings.fuelgauge;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,16 +32,45 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settings.R;
+import com.ion.ionizer.preferences.SystemSettingMasterSwitchPreference;
 
-public class AdvancedBatteryOptions extends SettingsPreferenceFragment {
+public class AdvancedBatteryOptions extends SettingsPreferenceFragment
+        implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "AdvancedBatteryOptions";
+
+    private static final String SMART_PIXELS_ENABLED = "smart_pixels_enable";
+
+    private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.advanced_battery_options);
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mSmartPixelsEnabled = (SystemSettingMasterSwitchPreference) findPreference(SMART_PIXELS_ENABLED);
+        mSmartPixelsEnabled.setOnPreferenceChangeListener(this);
+        int smartPixelsEnabled = Settings.System.getInt(getContentResolver(),
+                SMART_PIXELS_ENABLED, 0);
+        mSmartPixelsEnabled.setChecked(smartPixelsEnabled != 0);
+
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
+            getPreferenceScreen().removePreference(mSmartPixelsEnabled);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mSmartPixelsEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            SMART_PIXELS_ENABLED, value ? 1 : 0);
+            return true;
+        }
+        return false;
     }
 
     @Override
