@@ -149,6 +149,7 @@ import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
+import com.ion.ionizer.fragments.GamingMode;
 import com.ion.ionizer.fragments.HeadsUpSettings;
 import com.ion.ionizer.fragments.SmartPixels;
 import com.ion.ionizer.fragments.System;
@@ -296,6 +297,7 @@ public class SettingsGateway {
             DisplayRotation.class.getName(),
             SmartPixels.class.getName(),
             LiveDisplaySettings.class.getName(),
+            GamingMode.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -335,5 +337,6 @@ public class SettingsGateway {
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
             Settings.IonIonizerActivity.class.getName(),
+            Settings.GamingModeActivity.class.getName(),
     };
 }
