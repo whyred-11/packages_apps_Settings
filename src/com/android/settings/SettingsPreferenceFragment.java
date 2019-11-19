@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
@@ -261,7 +262,12 @@ public abstract class SettingsPreferenceFragment extends InstrumentedPreferenceF
      * Only override this method if the initial expanded child must be determined at run time.
      */
     public int getInitialExpandedChildCount() {
-        return 0;
+        if (Settings.System.getInt(getContentResolver(),
+                Settings.System.FORCE_EXPANDED_SETTINGS, 0) != 0) {
+            return Integer.MAX_VALUE;
+        } else {
+            return 0;
+        }
     }
 
     protected void onDataSetChanged() {
