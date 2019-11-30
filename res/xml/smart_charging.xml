@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2019 RevengeOS
+  ~ Copyright (C) 2019 ion-OS
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -21,26 +21,13 @@
     android:key="smart_charging_screen"
     android:title="@string/smart_charging_title">
 
-    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
-        android:key="smart_charging"
-        android:title="@string/smart_charging_switch_title"
-        android:defaultValue="false" />
-
-    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
-        android:key="smart_charging_reset_stats"
-        android:title="@string/smart_charging_reset_stats_title"
-        android:summary="@string/smart_charging_reset_stats_summary"
-        android:defaultValue="false"
-        android:dependency="smart_charging" />
-
     <com.ion.ionizer.preferences.CustomSeekBarPreference
         android:key="smart_charging_level"
         android:title="@string/smart_charging_level_title"
         android:max="100"
         settings:min="65"
         settings:units="%"
-        android:defaultValue="80"
-        android:dependency="smart_charging" />
+        android:defaultValue="80" />
 
     <com.ion.ionizer.preferences.CustomSeekBarPreference
         android:key="smart_charging_resume_level"
@@ -48,7 +35,11 @@
         android:max="99"
         settings:min="15"
         settings:units="%"
-        android:defaultValue="60"
-        android:dependency="smart_charging" />
+        android:defaultValue="60" />
 
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="smart_charging_reset_stats"
+        android:title="@string/smart_charging_reset_stats_title"
+        android:summary="@string/smart_charging_reset_stats_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>

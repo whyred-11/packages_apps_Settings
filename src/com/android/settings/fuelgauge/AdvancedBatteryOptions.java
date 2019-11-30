@@ -40,8 +40,10 @@ public class AdvancedBatteryOptions extends SettingsPreferenceFragment
     public static final String TAG = "AdvancedBatteryOptions";
 
     private static final String SMART_PIXELS_ENABLED = "smart_pixels_enable";
+    private static final String SMART_CHARGING = "smart_charging";
 
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
+    private SystemSettingMasterSwitchPreference mSmartChargeEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,16 @@ public class AdvancedBatteryOptions extends SettingsPreferenceFragment
         if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
             getPreferenceScreen().removePreference(mSmartPixelsEnabled);
         }
+
+        mSmartChargeEnabled = (SystemSettingMasterSwitchPreference) findPreference(SMART_CHARGING);
+        mSmartChargeEnabled.setOnPreferenceChangeListener(this);
+        int smartChargeEnabled = Settings.System.getInt(getContentResolver(),
+                SMART_CHARGING, 0);
+        mSmartChargeEnabled.setChecked(smartChargeEnabled != 0);
+
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_deviceSupportSmartCharging)) {
+            getPreferenceScreen().removePreference(mSmartChargeEnabled);
+        }
     }
 
     @Override
@@ -68,6 +80,11 @@ public class AdvancedBatteryOptions extends SettingsPreferenceFragment
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            SMART_PIXELS_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mSmartChargeEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            SMART_CHARGING, value ? 1 : 0);
             return true;
         }
         return false;
