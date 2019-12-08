@@ -154,10 +154,11 @@
     <string name="prevent_ringing_option_mute_no_media_summary">On (mute, no media)</string>
 
     <!-- Privacy chip view -->
-    <string name="privacy_chip_visibility">Privacy Indicator</string>
-    <string name="privacy_chip_visibility_summary">Show icons in QS when important permissions are being used</string>
+    <string name="privacy_chip_category">Privacy Indicator</string>
+    <string name="privacy_chip_visibility">Privacy Chip</string>
+    <string name="privacy_chip_visibility_summary">Show Privacy Chip in QS when important permissions are in use</string>
     <string name="privacy_chip_statusbar_visibility">Show in statusbar</string>
-    <string name="privacy_chip_statusbar_visibility_summary">Show privacy icon in statusbar when important permissions are being used</string>
+    <string name="privacy_chip_statusbar_visibility_summary">Show privacy icon in statusbar when important permissions are in use</string>
 
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
