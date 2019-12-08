@@ -63,25 +63,29 @@
         android:summary="@string/show_password_summary"
         settings:controller="com.android.settings.security.ShowPasswordPreferenceController"/>
 
-    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
-        android:key="privacy_chip_view"
-        android:title="@string/privacy_chip_visibility"
-        android:summary="@string/privacy_chip_visibility_summary"
-        android:defaultValue="true"/>
-
-    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
-        android:key="privacy_chip_statusbar_view"
-        android:title="@string/privacy_chip_statusbar_visibility"
-        android:summary="@string/privacy_chip_statusbar_visibility_summary"
-        android:dependency="privacy_chip_view"
-        android:defaultValue="true"/>
-
     <!-- On lock screen notifications -->
     <com.android.settings.RestrictedListPreference
         android:key="privacy_lock_screen_notifications"
         android:title="@string/lock_screen_notifications_title"
         android:summary="@string/summary_placeholder"
         settings:searchable="false"/>
+
+    <PreferenceCategory
+        android:title="@string/privacy_chip_category">
+
+        <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+            android:key="privacy_chip_view"
+            android:title="@string/privacy_chip_visibility"
+            android:summary="@string/privacy_chip_visibility_summary"
+            android:defaultValue="true"/>
+
+        <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+            android:key="privacy_chip_statusbar_view"
+            android:title="@string/privacy_chip_statusbar_visibility"
+            android:summary="@string/privacy_chip_statusbar_visibility_summary"
+            android:dependency="privacy_chip_view"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
 
     <!-- Privacy Service -->
     <PreferenceCategory

@@ -30,5 +30,6 @@
     <color name="notification_importance_button_unselected">#5F6368</color>
     <color name="ion_icon_tint_color">@*android:color/accent_device_default_dark</color>
     <color name="face_intro_outline">?android:attr/colorAccent</color>
+    <color name="colorCardStrokeInverse">#2AE4E4E4</color>
 </resources>
 
