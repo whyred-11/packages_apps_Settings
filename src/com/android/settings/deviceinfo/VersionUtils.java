@@ -7,8 +7,9 @@ public class VersionUtils {
     public static String getIonVersion(){
         String buildDate = SystemProperties.get("ro.ion.build_date","");
         String buildIon = SystemProperties.get("ro.ionizer","");
-        String buildRel = SystemProperties.get("ro.ion.release_type", "");
+        String buildDev = SystemProperties.get("ro.ion.device","");
+        String buildRel = SystemProperties.get("ro.ion.release_type","");
         String buildType = SystemProperties.get("ro.ion.build_type","unofficial")/*.toUpperCase()*/;
-        return buildDate.equals("") ? "" : "ion-" + buildIon + "-" + buildDate + "-" + buildType + "-" + buildRel;
+        return buildDate.equals("") ? "" : "ion-" + buildIon + "-" + buildDev + "-" + buildDate + "-" + buildType + "-" + buildRel;
     }
 }
