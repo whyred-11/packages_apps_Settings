@@ -23,11 +23,15 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class SwipeToScreenshotGestureSettings extends DashboardFragment {
+@SearchIndexable
+public class SwipeToScreenshotGestureSettings extends DashboardFragment implements
+        Indexable {
 
     private static final String TAG = "SwipeToScreenshotGestureSettings";
 
