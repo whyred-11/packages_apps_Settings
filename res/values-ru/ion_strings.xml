@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ion -->
     <string name="ion_ionizer_title">ionizer</string>
-    <string name="ion_ionizer_summary">ionize Everything...</string>
+    <string name="ion_ionizer_summary">Дополнительные настройки прошивки</string>
 
     <!-- Ion-OS info -->
     <string name="ion_title">ion</string>
@@ -53,10 +53,10 @@
     <string name="unlock_quick_unlock_control_summary">Автоматическая разблокировка при вводе правильного PIN / пароля</string>
 
     <!-- Back Gesture Height -->
-    <string name="back_height_low_label">Полный</string>
-    <string name="back_height_high_label">Низ</string>
+    <string name="back_height_low_label">Вся</string>
+    <string name="back_height_high_label">Ниже</string>
     <string name="back_options_dialog_title">Параметры</string>
-    <string name="back_height_message">Высота экрана, используемая в качестве сенсорной области для жеста "Назад".</string>
+    <string name="back_height_message">Высота экрана, используемая в качестве сенсорной области для жеста возврата</string>
 
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
@@ -166,7 +166,7 @@
     <string name="increasing_ring_ramp_up_time_title">Время нарастания</string>
 
     <!-- LiveDisplay -->
-    <string name="live_display_summary">Оптимизируйте экран в зависимости от времени суток и окружающих условий, чтобы улучшить читаемость и уменьшить утомляемость глаз.</string>
+    <string name="live_display_summary">Оптимизируйте экран в зависимости от времени суток и окружающих условий, чтобы улучшить читаемость и уменьшить утомляемость глаз</string>
     <string name="live_display_mode">Режим экрана</string>
     <string name="live_display_color_temperature_title">Цветовая температура</string>
     <string name="live_display_color_temperature_summary">День: <xliff:g id="day_temperature">%1$d</xliff:g>K  Ночь: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
@@ -224,7 +224,7 @@
 
     <!-- Fingerprint to dismiss -->
     <string name="fp_swipe_to_dismiss_notifications_title">Провести пальцем по отпечатку пальца влево или вправо, чтобы отклонить уведомления</string>
-    <string name="fp_swipe_to_dismiss_notifications_summary">Чтобы отклонить уведомления, проведите пальцем влево или вправо по датчику отпечатка пальцев на задней панели телефона.</string>
+    <string name="fp_swipe_to_dismiss_notifications_summary">Чтобы отклонить уведомления, проведите пальцем влево или вправо по датчику отпечатка пальцев на задней панели телефона</string>
 
     <!-- Ambient display battery percentage -->
     <string name="ambient_battery_percent_title">Уровень заряда батареи снизу</string>
@@ -276,4 +276,19 @@
 
     <!-- Running services -->
     <string name="background_processes_settings_title">Фоновые процессы</string>
+
+    <!-- NavigationBar Gestural Mode Tweaks -->
+    <string name="gesture_pill_title">Скрыть Панель навигации</string>
+    <string name="gesture_pill_message">Скрытие навигационной панели для полноэкранных жестов</string>
+
+    <!-- Hotspot extras -->
+    <string name="tethering_allow_vpn_upstreams_title">Allow clients to use VPNs</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Permit hotspot clients to use this device\u2019s VPN connections for upstream connectivity</string>
+
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Цвет акцента</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Шрифт заголовков / Основной шрифт</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма иконок</string>
 </resources>
