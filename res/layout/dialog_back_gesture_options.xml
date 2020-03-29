@@ -181,7 +181,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="@string/back_block_ime_title_message"
+            android:text="@string/back_block_ime_message"
             android:textAppearance="?android:attr/textAppearance" />
 
         <TextView

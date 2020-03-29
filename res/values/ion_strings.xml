@@ -261,10 +261,10 @@
     <string name="custom_light_off_time_title">Light OFF time during led pulse (ms)</string>
 
     <!-- Back gesture settings -->
-    <string name="back_gesture_arrow_title">Back arrow animation</string>
-    <string name="back_gesture_arrow_message">Hide arrow with back gesture</string>
+    <string name="back_gesture_arrow_title">Hide back arrow</string>
+    <string name="back_gesture_arrow_message">Hide back gesture arrow animation</string>
     <string name="back_block_ime_title">Block on IME</string>
-    <string name="back_block_ime_title_message">Block back gesture on virtual keyboard</string>
+    <string name="back_block_ime_message">Block back gesture on virtual keyboard</string>
 
     <!-- Android debugging over WiFi -->
     <string name="adb_over_network">ADB over network</string>
