@@ -294,10 +294,6 @@
     <!-- Notification log -->
     <string name="notification_log_summary">Show notifications history log</string>
 
-    <!-- In-call feedback -->
-    <string name="incall_feeedback_vibrate_title">In-Call vibration</string>
-    <string name="incall_feeedback_summary">Vibrate to indicate call status</string>
-
     <!-- Custom Vibration fragment -->
     <string name="vibration_preferences">Vibration &amp; haptics</string>
     <string name="summary_vibration_preferences">Change intensities, patterns and more</string>
