@@ -305,7 +305,7 @@
 
     <!-- Custom Vibration fragment -->
     <string name="vibration_preferences">Vibration &amp; haptics</string>
-    <string name="summary_vibration_preferences">Change intensities, patterns and more</string>
+    <string name="summary_vibration_preferences">In-call vibration, patterns and more</string>
     <string name="keywords_vibration_preferences">vibration pattern, vibration intensity, incall, haptics, tap, vibration strength</string>
     <string name="ringtone_vibration_pattern">Ringtone vibration pattern</string>
     <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
