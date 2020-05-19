@@ -40,10 +40,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
     private static final String KEY_BACK_HEIGHT = "back_height";
     private static final String KEY_HOME_HANDLE_SIZE = "home_handle_width";
 
-    private boolean mArrowSwitchChecked;
-    private boolean mBlockIMESwitchChecked;
-    private boolean mHapticSwitchChecked;
-
     public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length) {
         if (!parent.isAdded()) {
             return;
@@ -75,36 +71,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
         seekBarHeight.setProgress(getArguments().getInt(KEY_BACK_HEIGHT));
         final SeekBar seekBarHandleSize = view.findViewById(R.id.home_handle_seekbar);
         seekBarHandleSize.setProgress(getArguments().getInt(KEY_HOME_HANDLE_SIZE));
-        final Switch arrowSwitch = view.findViewById(R.id.back_arrow_gesture_switch);
-        mArrowSwitchChecked = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.HIDE_BACK_ARROW_GESTURE, 0) == 1;
-        arrowSwitch.setChecked(mArrowSwitchChecked);
-        arrowSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mArrowSwitchChecked = arrowSwitch.isChecked() ? true : false;
-            }
-        });
-        final Switch imeSwitch = view.findViewById(R.id.back_block_ime);
-        mBlockIMESwitchChecked = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.BACK_GESTURE_BLOCK_IME, 1) == 1;
-        imeSwitch.setChecked(mBlockIMESwitchChecked);
-        imeSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mBlockIMESwitchChecked = imeSwitch.isChecked() ? true : false;
-            }
-        });
-        final Switch hapticSwitch = view.findViewById(R.id.back_gesture_haptic);
-        mHapticSwitchChecked = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.BACK_GESTURE_HAPTIC, 1) == 1;
-        hapticSwitch.setChecked(mHapticSwitchChecked);
-        hapticSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mHapticSwitchChecked = hapticSwitch.isChecked() ? true : false;
-            }
-        });
         return new AlertDialog.Builder(getContext())
                 .setTitle(R.string.back_options_dialog_title)
                 .setView(view)
@@ -119,12 +85,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                     SystemNavigationGestureSettings.setHomeHandleSize(getActivity(), length);
                     SystemNavigationGestureSettings.setBackSensitivity(getActivity(),
                             getOverlayManager(), sensitivity);
-                    Settings.Secure.putInt(getActivity().getContentResolver(),
-                            Settings.Secure.HIDE_BACK_ARROW_GESTURE, mArrowSwitchChecked ? 1 : 0);
-                    Settings.System.putInt(getActivity().getContentResolver(),
-                            Settings.System.BACK_GESTURE_BLOCK_IME, mBlockIMESwitchChecked ? 1 : 0);
-                    Settings.System.putInt(getContext().getContentResolver(),
-                            Settings.System.BACK_GESTURE_HAPTIC, mHapticSwitchChecked ? 1 : 0);
                 })
                 .create();
     }
