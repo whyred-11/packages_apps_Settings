@@ -29,7 +29,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto; 
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -62,23 +62,9 @@ public class AdvancedBatteryOptions extends SettingsPreferenceFragment
 
         mSmartPixelsEnabled = (SystemSettingMasterSwitchPreference) findPreference(SMART_PIXELS_ENABLED);
         mSmartPixelsEnabled.setOnPreferenceChangeListener(this);
-        int smartPixelsEnabled = Settings.System.getInt(getContentResolver(),
-                SMART_PIXELS_ENABLED, 0);
-        mSmartPixelsEnabled.setChecked(smartPixelsEnabled != 0);
-
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
-            getPreferenceScreen().removePreference(mSmartPixelsEnabled);
-        }
-
         mSmartChargeEnabled = (SystemSettingMasterSwitchPreference) findPreference(SMART_CHARGING);
         mSmartChargeEnabled.setOnPreferenceChangeListener(this);
-        int smartChargeEnabled = Settings.System.getInt(getContentResolver(),
-                SMART_CHARGING, 0);
-        mSmartChargeEnabled.setChecked(smartChargeEnabled != 0);
-
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_deviceSupportSmartCharging)) {
-            getPreferenceScreen().removePreference(mSmartChargeEnabled);
-        }
+        updatePreferences();
     }
 
     @Override
@@ -96,6 +82,35 @@ public class AdvancedBatteryOptions extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    private void updatePreferences() {
+        int smartPixelsEnabled = Settings.System.getInt(getContentResolver(),
+                SMART_PIXELS_ENABLED, 0);
+        mSmartPixelsEnabled.setChecked(smartPixelsEnabled != 0);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
+            getPreferenceScreen().removePreference(mSmartPixelsEnabled);
+        }
+        int smartChargeEnabled = Settings.System.getInt(getContentResolver(),
+                SMART_CHARGING, 0);
+        mSmartChargeEnabled.setChecked(smartChargeEnabled != 0);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_deviceSupportSmartCharging)) {
+            getPreferenceScreen().removePreference(mSmartChargeEnabled);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        updatePreferences();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        updatePreferences();
     }
 
     @Override

@@ -21,6 +21,8 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.widget.Switch;
+
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
@@ -29,6 +31,8 @@ import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settings.widget.SwitchBar;
+import com.android.settings.SettingsActivity;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -37,11 +41,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ion.ionizer.preferences.CustomSeekBarPreference;
+import com.ion.ionizer.preferences.SystemSettingSwitchPreference;
 
 /**
  * Settings screen for Smart charging
  */
-public class SmartChargingSettings extends DashboardFragment implements OnPreferenceChangeListener {
+public class SmartChargingSettings extends DashboardFragment
+        implements OnPreferenceChangeListener, SwitchBar.OnSwitchChangeListener {
 
     private static final String TAG = "SmartChargingSettings";
     private static final String KEY_SMART_CHARGING_LEVEL = "smart_charging_level";
@@ -51,6 +57,32 @@ public class SmartChargingSettings extends DashboardFragment implements OnPrefer
 
     private int mSmartChargingLevelDefaultConfig;
     private int mSmartChargingResumeLevelDefaultConfig;
+    private SystemSettingSwitchPreference mChargingReset;
+
+    private SwitchBar mSwitchBar;
+
+    @Override
+    public void onActivityCreated(Bundle icicle) {
+        super.onActivityCreated(icicle);
+
+        final boolean isChecked = Settings.System.getInt(getContentResolver(),
+                Settings.System.SMART_CHARGING, 0) != 0;
+        mSwitchBar = ((SettingsActivity) getActivity()).getSwitchBar();
+        mSwitchBar.addOnSwitchChangeListener(this);
+        mSwitchBar.setChecked(isChecked);
+        mSwitchBar.show();
+    }
+
+    @Override
+    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+        if (switchView != mSwitchBar.getSwitch()) {
+            return;
+        }
+        Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.SMART_CHARGING, isChecked ? 1 : 0);
+        updatePreferences();
+    }
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -74,7 +106,17 @@ public class SmartChargingSettings extends DashboardFragment implements OnPrefer
         mSmartChargingResumeLevel.setValue(currentResumeLevel);
         mSmartChargingResumeLevel.setOnPreferenceChangeListener(this);
 
+        mChargingReset = (SystemSettingSwitchPreference) findPreference("smart_charging_reset_stats");
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_charging_footer);
+        updatePreferences();
+    }
+
+    private void updatePreferences() {
+        boolean isChecked = Settings.System.getInt(getContentResolver(),
+                Settings.System.SMART_CHARGING, 0) != 0;
+        mSmartChargingLevel.setEnabled(isChecked);
+        mSmartChargingResumeLevel.setEnabled(isChecked);
+        mChargingReset.setEnabled(isChecked);
     }
 
     @Override
