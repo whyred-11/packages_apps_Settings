@@ -32,11 +32,11 @@
         android:summary="@string/smart_charging_summary"
         android:defaultValue="false" />
 
-    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
-        android:key="sensor_block"
+    <PreferenceScreen
+        android:key="sensor_block_settings"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
-        android:defaultValue="false" />
+        android:fragment="com.ion.ionizer.fragments.SensorBlock" />
 
     <PreferenceScreen
         android:key="battery_charge_sound"
