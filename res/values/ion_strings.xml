@@ -348,4 +348,9 @@
 
     <!-- Clipboard toast toggle -->
     <string name="show_clipboard_toast">Show clipboard access toast</string>
+
+    <!-- Face unlock toggle -->
+    <string name="face_auto_unlock_title">Face auto unlock</string>
+    <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
+
 </resources>
